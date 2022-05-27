@@ -84,10 +84,10 @@ export class BDCryptor {
 
     if (result.active !== null) {
       State.active = result.active;
-      if (!result.active) {
-        this.unpatchIn();
-        this.unpatchOut();
-      } else {
+      this.unpatchIn();
+      this.unpatchOut();
+
+      if (result.active) {
         this.masterPassword = result.masterPassword;
 
         if (result.incomingActive === null && State.in)
@@ -109,22 +109,24 @@ export class BDCryptor {
     }
 
     if (result.incomingActive !== null) {
-      State.in = result.incomingActive;
-      if (result.incomingActive) {
-        if (State.active && !this.inUnpatchers.length)
+      if (State.in != result.incomingActive) {
+        State.in = result.incomingActive;
+        if (result.incomingActive && State.active) {
           this.patchIn();
-      } else {
-        this.unpatchIn();
+        } else {
+          this.unpatchIn();
+        }
       }
     }
 
     if (result.outgoingActive !== null) {
-      State.out = result.outgoingActive;
-      if (result.outgoingActive) {
-        if (State.active && result.outgoingActive && !this.inUnpatchers.length)
+      if (State.out != result.outgoingActive) {
+        State.out = result.outgoingActive;
+        if (result.outgoingActive && State.active) {
           this.patchOut();
-      } else {
-        this.unpatchOut();
+        } else {
+          this.unpatchOut();
+        }
       }
     }
   }

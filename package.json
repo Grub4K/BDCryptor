@@ -1,6 +1,6 @@
 {
   "name": "bdcryptor",
-  "version": "1.0.0-dev0",
+  "version": "1.0.0-dev1",
   "description": "A simple encryption plugin for BetterDiscord",
   "homepage": "https://github.com/Grub4K/BDCryptor",
   "repository": "github:Grub4K/BDCryptor",
