@@ -1,0 +1,23 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "extends": [
+    "eslint:recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "rules": {
+    "semi": [2, "always"],
+    "indent": [2, 2],
+    "linebreak-style": [2, "windows"],
+    "quotes": [2, "double"]
+  },
+  "globals": {
+    "BdApi": "readonly"
+  }
+}

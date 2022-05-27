@@ -1,0 +1,27 @@
+{
+  "name": "bdcryptor",
+  "version": "1.0.0-dev0",
+  "description": "A simple encryption plugin for BetterDiscord",
+  "homepage": "https://github.com/Grub4K/BDCryptor",
+  "repository": "github:Grub4K/BDCryptor",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "lint": "eslint -c .eslintrc.json --ext .js ./src/**"
+  },
+  "author": {
+    "name": "Simon Sawicki",
+    "url": "https://github.com/Grub4K",
+    "tag": "Grub4K",
+    "snowflake": "272393329914675200"
+  },
+  "funding": "https://ko-fi.com/Grub4K",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/bandagedbd__bdapi": "^0.3.4",
+    "crypto-js": "^4.1.1",
+    "eslint": "^8.16.0",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2"
+  }
+}
